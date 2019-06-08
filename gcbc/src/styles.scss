@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+* {
+  font-family: "Poppins", sans-serif;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+body,
+.container {
+  background-color: #fcfcfc;
+}
+.side-bar {
+  box-shadow: -1px 1px 8px #888888;
+  width: 12.5vw;
+  position: fixed;
+  height: 100vh;
+  min-width: 125px;
+  background-color: #fff;
+
+  &-wrapper {
+    padding-top: 10vh;
+
+    .side-bar-item {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      align-content: space-around;
+      text-align: center;
+      padding: 10px 4px;
+
+      &:hover {
+        background-color: #f1f0f0;
+        border-right: 3px solid #ed568c;
+        & i {
+          color: #594fc5;
+        }
+      }
+      &-active {
+        background-color: #f1f0f0;
+        border-right: 3px solid #ed568c;
+        & i {
+          color: #594fc5;
+        }
+      }
+    }
+    .side-bar-item a {
+      text-decoration: none;
+      color: #5f5f60;
+    }
+    .side-bar-item i {
+      padding: 0px 10px;
+    }
+  }
+}
+
+.console-card {
+  display: flex;
+  margin-bottom: 15px;
+  padding: 10px 4px;
+  width: 80%;
+  justify-content: space-between;
+  .name {
+    width: 20%;
+  }
+  .crop,
+  .quantity,
+  .rate,
+  .location {
+    width: 20%;
+  }
+}
+
+.logo {
+  // background: url("./assets/icons/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 200px;
+}
+
+.container {
+  margin-left: 15%;
+  padding-top: 15vh;
+}
+
+.home-icon {
+  margin-top: 10px;
+  position: relative;
+  top: 5px;
+}
+
+.navbar {
+  display: flex;
+  position: fixed;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 10vh;
+  background-color: white;
+  box-shadow: -1px 1px 8px #888888 !important;
+  padding: 0px 4px;
+  z-index: 999;
+  &-container {
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.home {
+  margin-top: 100px;
+}
+
+.add-bid {
+  position: fixed;
+  border-radius: 50px;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  background: #ed568c;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  & i {
+    color: #fff;
+  }
+}
+
+.bid-form-modal {
+  z-index: 1200;
+  position: absolute;
+  height: 60%;
+}
+
+.bid-form {
+  width: 100%;
+  text-align: left;
+}
+
+.field-label > h5 {
+  font-weight: normal;
+  margin-bottom: 0px;
+}
+
+.field-label {
+  margin-bottom: 10px;
+}
+
+.field-title {
+  margin-top: 10px;
+  width: 70%;
+  height: 35px;
+  outline: none;
+}
+
+.field-description {
+  margin-top: 10px;
+  width: 70%;
+  height: 70px;
+  outline: none;
+  border-color: #e0e0e0;
+}
+
+.form-heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.project-button {
+  color: #ffffff;
+  font-size: 14px;
+  background: #ed568c;
+  outline: none;
+  margin-left: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  float: none;
+  width: 180px;
+  height: 50px;
+  margin-top: 25px;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  .message-container {
+    display: flex;
+    height: 95%;
+    width: 100%;
+    .message-list {
+      width: 95%;
+      display: flex;
+      overflow-y: scroll;
+      min-height: 100%;
+      flex-direction: column-reverse;
+      .icon {
+        align-self: center;
+      }
+      .message-item {
+        border-radius: 2px;
+        background: #e9e9eb;
+
+        min-width: 15%;
+        max-width: 70%;
+        min-height: 70%;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 10px;
+      }
+      .message-self {
+        width: 100%;
+        flex-shrink: 0;
+        display: flex;
+        min-height: 10%;
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  .send-message {
+    display: flex;
+    height: 5%;
+    width: 100%;
+    padding: 5px;
+  }
+  .textfield {
+    font-size: 20px;
+    padding-left: 10px;
+    padding-top: 10px;
+    width: 95%;
+    resize: none;
+    -webkit-border-radius: 5px;
+  }
+  .send-button {
+    display: flex;
+    align-self: center;
+    border: none;
+    width: 5%;
+    height: 100%;
+
+    button {
+      border: none;
+      width: 100%;
+      height: 100%;
+    }
+    i {
+      font-size: 45px;
+    }
+  }
+}
+
+.message-other {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  height: 10%;
+  flex-direction: row;
+}

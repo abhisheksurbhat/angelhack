@@ -1,0 +1,187 @@
+.feedback-modal {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	overflow-y: scroll;
+	background: #ffffff;
+	.modal-content {
+		border: 0;
+		box-shadow: none;
+		border-radius: 0;
+		height: 100%;
+	}
+	.modal-body {
+		left: 0;
+		right: 0;
+		top: 10%;
+		margin: auto;
+		position: absolute;
+		width: 510px;
+		height: 100%;
+		padding: 0;
+	}
+
+	.feedback-step-one {
+		padding: 70px 0;
+	}
+	.feedback-step-two {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		text-align: center;
+		.feedback-section {
+			width: 100%;
+		}
+		.feedback-success-text {
+			color: #434c5e;
+			font-size: 17;
+			text-transform: uppercase;
+			margin: 15px 0 20px;
+		}
+		.feedback-success-subtext {
+			color: #434c5e;
+			font-size: 17;
+		}
+	}
+
+	.feedback-actions {
+		text-align: center;
+		margin-top: 30px;
+		button {
+			font-size: 13;
+			font-weight: bold;
+			padding: 15px 75px;
+			color: #ffffff;
+			background: #468def;
+			border: 0;
+			outline: none;
+			border-radius: 2px;
+			transition: 0.1s all;
+			&:disabled {
+				color: #a2a2a6;
+				background: #a2a2a6;
+			}
+		}
+	}
+
+	.feedback-icon {
+		text-align: center;
+		margin-bottom: 15px;
+	}
+	.feedback-step-note {
+		color: #434c5e;
+		text-align: center;
+		font-weight: bold;
+		font-size: 17;
+		text-transform: uppercase;
+		line-height: 26px;
+		width: 400px;
+		margin: 40px auto 25px;
+	}
+
+	.feedback-skip {
+		margin-top: 20px;
+		color: #468def;
+		font-size: 13;
+		cursor: pointer;
+	}
+
+	.suggestion {
+		margin-left: 22px;
+		margin-top: 15px;
+		textarea {
+			font-size: 12;
+			padding: 10px 15px;
+			width: 400px;
+			height: 80px;
+			resize: none;
+			border: 1px #e9e9eb solid;
+			border-radius: 2px;
+			outline: none;
+			&::placeholder {
+				color: #aab1bb;
+				font-size: 12;
+			}
+		}
+	}
+
+	.star-text {
+		vertical-align: top;
+		height: 10px;
+	}
+	.question {
+		font-size: 14px;
+		display: inline-block;
+		margin-bottom: 10px;
+	}
+	.feedback-radio-button-wrap {
+		border: 1px #e9e9eb solid;
+		padding: 30px;
+		border-radius: 2px;
+		text-align: center;
+		.my-radio-button {
+			padding-left: 40px;
+			label {
+				margin-bottom: 40px;
+				margin-right: 4px;
+				color: #434c5e;
+				font-size: 14;
+				left: 0px;
+			}
+		}
+	}
+
+	.star-wrapper {
+		padding: 20px;
+		margin-top: 20px;
+	}
+
+	.star-wrapper div {
+		display: inline-block;
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+
+	.star {
+		display: inline-block;
+		position: relative;
+		cursor: pointer;
+		margin-right: 14px;
+		transition: all .25s ease;
+		height: 15px;
+		width: 15px;
+	}
+
+	.star:active {
+		transform: scale(0.75);
+	}
+	.star:after {
+		content: "";
+		display: block;
+		height: calc(100% + 5px);
+		width: calc(100% + 7px);
+		margin: auto;
+		background-image: url("https://i.ibb.co/hcJpVKc/star-copy.png");
+		background-size: cover;
+	}
+
+	.star.belowchecked:after {
+		content: "";
+		display: block;
+		height: calc(100% + 5px);
+		width: calc(100% + 7px);
+		background-image: url("https://i.ibb.co/JkB5dqS/star.png");
+		background-size: cover;
+	}
+
+	.hide {
+		display: none;
+	}
+}
+
+.close-feedback {
+	cursor: pointer;
+	margin-left: 20px;
+	width: 34px;
+	height: 18px;
+}
