@@ -11,6 +11,7 @@ import BidViewPage from "./components/projects/bid-view-page";
 import ChatList from "./components/chat/chat-list";
 import classNames from "classnames";
 import BidModal from "./components/projects/bid-modal.jsx";
+import HomeTab from './components/hometab.js';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           )}
         >
           <Route path="/dashboard" component={Dashboard} />
+          <Route path="/hometab" component={HomeTab} />
           <Route path="/home" component={Home} />
           <Route
             path="/feedback/:projectId/:customer_id/:reseller_id"
