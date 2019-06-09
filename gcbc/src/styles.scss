@@ -20,6 +20,10 @@ body,
 
   &-wrapper {
     padding-top: 10vh;
+    text-align: center;
+    h2 {
+      text-transform: uppercase;
+    }
 
     .side-bar-item {
       display: flex;
@@ -28,21 +32,6 @@ body,
       align-content: space-around;
       text-align: center;
       padding: 10px 4px;
-
-      &:hover {
-        background-color: #f1f0f0;
-        border-right: 3px solid #ed568c;
-        & i {
-          color: #594fc5;
-        }
-      }
-      &-active {
-        background-color: #f1f0f0;
-        border-right: 3px solid #ed568c;
-        & i {
-          color: #594fc5;
-        }
-      }
     }
     .side-bar-item a {
       text-decoration: none;
@@ -106,6 +95,11 @@ body,
     width: 90%;
     flex-direction: row;
     justify-content: space-between;
+    .navbar-headers {
+      width: 30%;
+      display: flex;
+      justify-content: space-evenly;
+    }
   }
 }
 

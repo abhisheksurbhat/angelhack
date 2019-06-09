@@ -13,7 +13,8 @@ class ConsoleTabs extends React.Component {
     value: 0
   };
   componentDidMount() {
-    this.props.getProjectsCount();
+    this.props.getBuyerOrders();
+    this.props.getSellerOrders();
   }
   handleChange = (event, value) => {
     this.setState({ value });
@@ -32,8 +33,8 @@ class ConsoleTabs extends React.Component {
             label="purchases"
           />
         </Tabs>
-        {value === 0 && <ProjectCardSmall type="quotations" />}
-        {value === 1 && <ConsoleCard type="purchases" />}
+        {value === 0 && <ConsoleCard orders={this.props.seller} />}
+        {value === 1 && <ConsoleCard orders={this.props.buyer} />}
       </React.Fragment>
     );
   }

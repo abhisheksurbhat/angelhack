@@ -5,6 +5,9 @@ import isSuccess from "../../utils";
 import { yieldExpression } from "@babel/types";
 
 export const projectsSagas = [
+  takeEvery(actionType.GET_BUYER_ORDER, onGetBuyerOrder),
+  takeEvery(actionType.GET_SELLER_ORDER, onGetSellerOrder),
+  takeEvery(actionType.GET_CONTRACTS, onGetContracts),
   takeEvery(actionType.GET_ACTIVE_PROJECTS, getProjects),
   takeEvery(actionType.GET_COMPLETED_PROJECTS, getProjects),
   takeEvery(actionType.GET_BID_PROJECTS, getProjects),
@@ -19,6 +22,37 @@ export const projectsSagas = [
   takeEvery(actionType.MARK_PROJECT_AS_COMPLETED, markProjectAsCompleted),
   takeEvery(actionType.SET_PROJECT_NEXT_STATE, setProjectNextState)
 ];
+
+function* onCreateQuotation(action) {
+  const response = yield api.put("/gcbc/", {});
+}
+
+function* onGetBuyerOrder(action) {
+  const response = yield api.get("/gcbc/buyers");
+  try {
+    yield put({ type: isSuccess(actionType.GET_BUYER_ORDER), response });
+  } catch (error) {
+    console.log("a error has occurred ", error);
+  }
+}
+
+function* onGetSellerOrder(action) {
+  const response = yield api.get("/gcbc/sellers");
+  try {
+    yield put({ type: isSuccess(actionType.GET_SELLER_ORDER), response });
+  } catch (error) {
+    console.log("a error has occurred ", error);
+  }
+}
+
+function* onGetContracts(action) {
+  const response = yield api.get("/gcbc/contracts");
+  try {
+    yield put({ type: isSuccess(actionType.GET_CONTRACTS), response });
+  } catch (error) {
+    console.log("a error has occurred ", error);
+  }
+}
 
 function* addProject(action) {
   const {

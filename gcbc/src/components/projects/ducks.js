@@ -9,10 +9,16 @@ const initialState = {
   resellerId: process.env.REACT_APP_RESELLER,
   project: {
     bids: []
-  }
+  },
+  buyer: [],
+  seller: [],
+  contracts: []
 };
 
 export const actionType = {
+  GET_BUYER_ORDER: "Get Buyer Orders",
+  GET_SELLER_ORDER: "Get Seller Orders",
+  GET_CONTRACTS: "Get Current Contracts",
   SUBMIT_BID: "Submit Bid",
   GET_ACTIVE_PROJECTS: "GET active projects",
   GET_COMPLETED_PROJECTS: "GET completed Projects",
@@ -30,6 +36,18 @@ export const actionType = {
 };
 
 export const actions = {
+  getBuyerOrders: payload => ({
+    type: actionType.GET_BUYER_ORDER,
+    payload
+  }),
+  getSellerOrders: payload => ({
+    type: actionType.GET_SELLER_ORDER,
+    payload
+  }),
+  getContracts: payload => ({
+    type: actionType.GET_CONTRACTS,
+    payload
+  }),
   submitBid: payload => {
     return {
       type: actionType.SUBMIT_BID,
@@ -115,6 +133,21 @@ export const actions = {
 
 export function projectsReducer(state = initialState, action) {
   switch (action.type) {
+    case isSuccess(actionType.GET_BUYER_ORDER):
+      return {
+        ...state,
+        buyer: action.response
+      };
+    case isSuccess(actionType.GET_SELLER_ORDER):
+      return {
+        ...state,
+        seller: action.response
+      };
+    case isSuccess(actionType.GET_CONTRACTS):
+      return {
+        ...state,
+        contracts: action.response
+      };
     case isSuccess(actionType.GET_PROJECTS):
       let {
         response: { type, response }

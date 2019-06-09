@@ -13,7 +13,9 @@ class ConsoleHomeTabs extends React.Component {
     value: 0
   };
   componentDidMount() {
-    this.props.getProjectsCount();
+    this.props.getBuyerOrders();
+    this.props.getSellerOrders();
+    this.props.getContracts();
   }
   handleChange = (event, value) => {
     this.setState({ value });
@@ -29,11 +31,23 @@ class ConsoleHomeTabs extends React.Component {
           />
           <Tab
             icon={<i className="material-icons">receipt</i>}
-            label="my purchases"
+            label="my contracts"
           />
         </Tabs>
-        {value === 0 && <ProjectCardSmall type="quotations" />}
-        {value === 1 && <ConsoleHomeCard type="purchases" />}
+        {value === 0 && (
+          <ConsoleHomeCard
+            type="purchases"
+            data={this.props.seller}
+            contract={true}
+          />
+        )}
+        {value === 1 && (
+          <ConsoleHomeCard
+            type="purchases"
+            data={this.props.contracts}
+            contract={false}
+          />
+        )}
       </React.Fragment>
     );
   }
